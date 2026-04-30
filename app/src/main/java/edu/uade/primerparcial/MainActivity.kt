@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -67,7 +68,7 @@ fun PokemonListScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Pokédex",
+                        text = stringResource(R.string.app_name),
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold
                     )
@@ -130,7 +131,7 @@ fun PokemonItem(pokemon: Pokemon) {
                     fontWeight = FontWeight.SemiBold
                 )
                 Text(
-                    text = "N.º ${pokemon.id}",
+                    text =  stringResource(R.string.pokemon_number, pokemon.id),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
