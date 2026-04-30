@@ -1,4 +1,4 @@
-package edu.uade.primerparcial.viewModel
+package edu.uade.primerparcial.logic
 
 import androidx.lifecycle.ViewModel
 import edu.uade.primerparcial.model.Pokemon

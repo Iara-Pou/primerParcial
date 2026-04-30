@@ -37,11 +37,13 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import edu.uade.primerparcial.model.Pokemon
-import edu.uade.primerparcial.viewModel.PokemonViewModel
+import edu.uade.primerparcial.logic.PokemonViewModel
 
 
-// Capa de conexión (Route). Desacopla como ingresan los pókemon a la vista.
-// Obtiene el estado desde el ViewModel y lo pasa a la UI (PokemonListScreen).
+/*Capa de conexión (Route). Desacopla como ingresan los pókemon a la vista.
+ Obtiene el estado desde el ViewModel y lo pasa a la UI (PokemonListScreen).
+ */
+
 @Composable
 fun PokemonListScreenRoute(
     viewModel: PokemonViewModel = viewModel()
@@ -50,9 +52,10 @@ fun PokemonListScreenRoute(
     PokemonListScreen(pokemons = pokemons)
 }
 
-// Ahora recibe la lista de pokemons por parámetro, para:
-// - Reutilizarlo en distintos contextos (tests, previews, otras pantallas)
-// - Facilitar su testeo sin depender de Android o del ViewModel
+/* Recibe la lista de pokemons por parámetro, para:
+- Reutilizarlo en distintos contextos (tests, previews, otras pantallas)
+- Facilitar su testeo sin depender de Android o del ViewModel
+*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PokemonListScreen(
