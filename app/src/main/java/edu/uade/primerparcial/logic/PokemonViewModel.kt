@@ -20,4 +20,4 @@ class PokemonViewModel(
     private fun loadPokemons() {
         _pokemons.value = repository.getPokemons()
     }
-    }
+}

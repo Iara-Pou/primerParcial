@@ -43,8 +43,8 @@ fun PokemonItem(pokemon: Pokemon) {
         ) {
             // Sprite del Pokémon (requiere Coil en build.gradle)
             AsyncImage(
-                model = getSprite(pokemon.id),
-                contentDescription = formatName(pokemon.name),
+                model = pokemon.spriteUrl,
+                contentDescription = pokemon.nameFormatted,
                 placeholder = painterResource(R.drawable.placeholder),
                 error = painterResource(R.drawable.error),
                 modifier = Modifier
@@ -56,7 +56,7 @@ fun PokemonItem(pokemon: Pokemon) {
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = formatName(pokemon.name),
+                    text = pokemon.nameFormatted,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold
                 )
@@ -69,8 +69,3 @@ fun PokemonItem(pokemon: Pokemon) {
         }
     }
 }
-
-fun formatName(name: String) = name.replaceFirstChar { it.uppercase() }
-
-fun getSprite(id: Int) =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png"
