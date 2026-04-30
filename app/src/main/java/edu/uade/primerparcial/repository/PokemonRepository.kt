@@ -1,6 +1,6 @@
 package edu.uade.primerparcial.repository
 
-import edu.uade.primerparcial.Pokemon
+import edu.uade.primerparcial.model.Pokemon
 
 class PokemonRepository {
 
