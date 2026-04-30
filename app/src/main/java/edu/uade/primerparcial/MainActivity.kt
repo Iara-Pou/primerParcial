@@ -37,7 +37,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import edu.uade.primerparcial.model.Pokemon
-import edu.uade.primerparcial.ui.theme.PrimerParcialTheme
 import edu.uade.primerparcial.viewModel.PokemonViewModel
 
 
@@ -139,10 +138,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            // Asegurate de que tu tema de la carpeta ui.theme envuelva esto
-            PrimerParcialTheme {
-                PokemonListScreenRoute()
-            }
+            PokemonListScreenRoute()
         }
     }
 }
