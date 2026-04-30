@@ -41,32 +41,6 @@ import coil.compose.AsyncImage
 import edu.uade.primerparcial.model.Pokemon
 import edu.uade.primerparcial.viewModel.PokemonViewModel
 
-@Composable
-fun PokemonListScreen(
-    viewModel: PokemonViewModel = viewModel()
-) {
-    val pokemons by viewModel.pokemons.collectAsState()
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Text(
-            text = "Tenemos ${pokemons.size} pokémons cargados 🎉",
-            style = MaterialTheme.typography.headlineSmall
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "¿Cómo los mostramos en una lista?",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-    }
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PokemonListScreenFinal(
