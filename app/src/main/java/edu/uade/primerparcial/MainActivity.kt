@@ -40,13 +40,25 @@ import edu.uade.primerparcial.model.Pokemon
 import edu.uade.primerparcial.ui.theme.PrimerParcialTheme
 import edu.uade.primerparcial.viewModel.PokemonViewModel
 
-@OptIn(ExperimentalMaterial3Api::class)
+
+// Capa de conexión (Route). Desacopla como ingresan los pókemon a la vista.
+// Obtiene el estado desde el ViewModel y lo pasa a la UI (PokemonListScreen).
 @Composable
-fun PokemonListScreenFinal(
+fun PokemonListScreenRoute(
     viewModel: PokemonViewModel = viewModel()
 ) {
     val pokemons by viewModel.pokemons.collectAsState()
+    PokemonListScreen(pokemons = pokemons)
+}
 
+// Ahora recibe la lista de pokemons por parámetro, para:
+// - Reutilizarlo en distintos contextos (tests, previews, otras pantallas)
+// - Facilitar su testeo sin depender de Android o del ViewModel
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun PokemonListScreen(
+    pokemons: List<Pokemon>
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -129,7 +141,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             // Asegurate de que tu tema de la carpeta ui.theme envuelva esto
             PrimerParcialTheme {
-                PokemonListScreenFinal()
+                PokemonListScreenRoute()
             }
         }
     }
