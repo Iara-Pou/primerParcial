@@ -9,10 +9,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -39,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import edu.uade.primerparcial.model.Pokemon
+import edu.uade.primerparcial.ui.theme.PrimerParcialTheme
 import edu.uade.primerparcial.viewModel.PokemonViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -128,7 +127,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            // Asegurate de que tu tema de la carpeta ui.theme envuelva esto
+            PrimerParcialTheme {
                 PokemonListScreenFinal()
+            }
         }
     }
 }
